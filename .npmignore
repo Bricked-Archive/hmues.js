@@ -4,6 +4,7 @@ tsconfig.json
 
 .eslintignore
 .eslintrc
+.prettierrc
 
 node_modules/
 package-lock.json
