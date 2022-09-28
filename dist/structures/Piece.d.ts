@@ -1,3 +1,4 @@
+import { Awaitable } from 'discord.js';
 import { Store } from './Store';
 /** Can be loaded {@link Store}s. */
 export declare abstract class Piece<O extends Piece.Options = Piece.Options> {
@@ -12,10 +13,10 @@ export declare abstract class Piece<O extends Piece.Options = Piece.Options> {
     /** The options passed to the piece. */
     readonly options: O;
     constructor(options: O);
-    /** Gets called when the {@link Piece} is being loaded */
-    onLoad(): Promise<void>;
-    /** Gets called when the {@link Piece} is being unloaded */
-    onUnload(): Promise<void>;
+    /** Gets called when the {@link Piece} is being registered */
+    register(): Awaitable<void>;
+    /** Gets called when the {@link Piece} is being deregistered */
+    deregister(): Awaitable<void>;
 }
 export declare namespace Piece {
     /** The options for the {@link Piece}. */

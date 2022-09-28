@@ -10,9 +10,9 @@ class Piece {
         this.store ?? (this.store = options.store);
         this.options = options;
     }
-    /** Gets called when the {@link Piece} is being loaded */
-    async onLoad() { }
-    /** Gets called when the {@link Piece} is being unloaded */
-    async onUnload() { }
+    /** Gets called when the {@link Piece} is being registered */
+    register() { }
+    /** Gets called when the {@link Piece} is being deregistered */
+    deregister() { }
 }
 exports.Piece = Piece;

@@ -1,3 +1,4 @@
+import { Awaitable } from 'discord.js'
 import { Store } from './Store'
 
 /** Can be loaded {@link Store}s. */
@@ -21,11 +22,11 @@ export abstract class Piece<O extends Piece.Options = Piece.Options> {
     this.options = options
   }
 
-  /** Gets called when the {@link Piece} is being loaded */
-  async onLoad() {}
+  /** Gets called when the {@link Piece} is being registered */
+  register(): Awaitable<void> {}
 
-  /** Gets called when the {@link Piece} is being unloaded */
-  async onUnload() {}
+  /** Gets called when the {@link Piece} is being deregistered */
+  deregister(): Awaitable<void> {}
 }
 
 export namespace Piece {

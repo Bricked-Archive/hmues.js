@@ -31,7 +31,7 @@ class Store extends discord_js_1.Collection {
      */
     register(piece) {
         this.set(piece.name, piece);
-        piece.onLoad();
+        piece.register();
         return piece;
     }
     /**
@@ -40,7 +40,7 @@ class Store extends discord_js_1.Collection {
      */
     deregister(piece) {
         piece.enabled = false;
-        piece.onUnload();
+        piece.deregister();
         return piece;
     }
     /**

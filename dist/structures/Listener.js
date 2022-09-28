@@ -21,10 +21,10 @@ class Listener extends Piece_1.Piece {
     catch(reason) {
         console.error(reason);
     }
-    async onLoad() {
+    register() {
         this.emitter[this.once ? 'once' : 'on'](this.event, this._run);
     }
-    async onUnload() {
+    deregister() {
         this.emitter.removeListener(this.event, this._run);
     }
 }

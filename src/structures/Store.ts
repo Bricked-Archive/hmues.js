@@ -39,7 +39,7 @@ export class Store<T extends Piece = Piece> extends Collection<string, T> {
    */
   register(piece: T) {
     this.set(piece.name, piece)
-    piece.onLoad()
+    piece.register()
     return piece
   }
 
@@ -49,7 +49,7 @@ export class Store<T extends Piece = Piece> extends Collection<string, T> {
    */
   deregister(piece: T) {
     piece.enabled = false
-    piece.onUnload()
+    piece.deregister()
     return piece
   }
 

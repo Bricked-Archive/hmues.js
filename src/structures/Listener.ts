@@ -33,11 +33,11 @@ export abstract class Listener<
     console.error(reason)
   }
 
-  async onLoad() {
+  register(): Awaitable<void> {
     this.emitter[this.once ? 'once' : 'on'](this.event, this._run as any)
   }
 
-  async onUnload() {
+  deregister(): Awaitable<void> {
     this.emitter.removeListener(this.event, this._run as any)
   }
 }

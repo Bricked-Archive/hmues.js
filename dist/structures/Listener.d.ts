@@ -13,8 +13,8 @@ export declare abstract class Listener<E extends keyof ClientEvents | null = nul
     abstract run(...args: E extends keyof ClientEvents ? ClientEvents[E] : unknown[]): Awaitable<void>;
     _run(...args: E extends keyof ClientEvents ? ClientEvents[E] : unknown[]): Promise<void>;
     catch(reason: unknown): Awaitable<void>;
-    onLoad(): Promise<void>;
-    onUnload(): Promise<void>;
+    register(): Awaitable<void>;
+    deregister(): Awaitable<void>;
 }
 export declare namespace Listener {
     /** The options for the {@link Listener}. */
