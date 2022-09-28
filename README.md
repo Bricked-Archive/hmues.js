@@ -6,7 +6,7 @@
 
 **A really cook Discord.js Bot fremwok**
 
-[![Support Server](https://discord.com/api/guilds/968171159776559174/embed.png?style=banner2)](https://discord.gg/KubGRbRKWX)
+[![Support Server](https://discord.com/api/guilds/968171159776559174/embed.png?style=banner2)](https://discord.gg/nkJCxU9STT)
 
 ( really cook server btw )
 
