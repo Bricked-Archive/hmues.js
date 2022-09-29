@@ -34,11 +34,11 @@ export abstract class Listener<
   }
 
   register(): Awaitable<void> {
-    this.emitter[this.once ? 'once' : 'on'](this.event, this._run as any)
+    this.emitter[this.once ? 'once' : 'on'](this.event, this._run.bind(this) as any)
   }
 
   deregister(): Awaitable<void> {
-    this.emitter.removeListener(this.event, this._run as any)
+    this.emitter.removeListener(this.event, this._run.bind(this) as any)
   }
 }
 
