@@ -18,6 +18,7 @@
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
         "curly": "off",
         "eol-last": "off",
         "generator-star-spacing": [ "error", { "before": true, "after": false } ],
