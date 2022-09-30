@@ -1,17 +1,17 @@
-import { Client } from 'discord.js'
+import { EventEmitter } from 'events'
 import { Listener } from './Listener'
 import { Store } from './Store'
 
 export class ListenerStore extends Store<Listener> {
-  client: Client
-  constructor(client: Client) {
+  emitter: EventEmitter
+  constructor(emitter: EventEmitter) {
     super(Listener)
-    this.client ??= client
+    this.emitter ??= emitter
   }
 
   construct(Ctor: new (options: Listener.Options) => Listener, data: ListenerStore.ModuleData) {
     return super.construct(Ctor, {
-      emitter: this.client,
+      emitter: this.emitter,
       event: 'ready',
       once: false,
       ...data
