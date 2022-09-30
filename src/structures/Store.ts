@@ -40,6 +40,7 @@ export class Store<T extends Piece = Piece> extends Collection<string, T> {
   register(piece: T) {
     this.set(piece.name, piece)
     piece.register()
+    if (!piece.enabled) this.deregister(piece)
     return piece
   }
 

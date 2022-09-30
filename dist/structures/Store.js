@@ -32,6 +32,8 @@ class Store extends discord_js_1.Collection {
     register(piece) {
         this.set(piece.name, piece);
         piece.register();
+        if (!piece.enabled)
+            this.deregister(piece);
         return piece;
     }
     /**
