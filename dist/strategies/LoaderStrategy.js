@@ -38,7 +38,7 @@ class LoaderStrategy {
      * @returns The resolved absolute path
      */
     resolve(path) {
-        return (0, path_1.join)(require.main?.path ?? '', path);
+        return (0, path_1.resolve)(require.main?.path ?? '', path);
     }
 }
 exports.LoaderStrategy = LoaderStrategy;

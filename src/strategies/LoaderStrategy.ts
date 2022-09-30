@@ -1,7 +1,7 @@
 import { Piece } from '../structures/Piece'
 import { Store } from '../structures/Store'
 import { stat, readdir } from 'fs/promises'
-import { basename, join } from 'path'
+import { basename, join, resolve } from 'path'
 
 /** Can parse a path for {@link Piece}s. */
 export class LoaderStrategy<T extends Piece> {
@@ -38,7 +38,7 @@ export class LoaderStrategy<T extends Piece> {
    * @returns The resolved absolute path
    */
   resolve(path: string) {
-    return join(require.main?.path ?? '', path)
+    return resolve(require.main?.path ?? '', path)
   }
 }
 
