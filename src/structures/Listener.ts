@@ -33,11 +33,11 @@ export abstract class Listener<
     console.error(reason)
   }
 
-  register(): Awaitable<void> {
+  override register(): Awaitable<void> {
     this.emitter[this.once ? 'once' : 'on'](this.event, this._run.bind(this) as any)
   }
 
-  deregister(): Awaitable<void> {
+  override deregister(): Awaitable<void> {
     this.emitter.removeListener(this.event, this._run.bind(this) as any)
   }
 }

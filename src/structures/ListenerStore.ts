@@ -9,7 +9,10 @@ export class ListenerStore extends Store<Listener> {
     this.emitter ??= emitter
   }
 
-  construct(Ctor: new (options: Listener.Options) => Listener, data: ListenerStore.ModuleData) {
+  override construct(
+    Ctor: new (options: Listener.Options) => Listener,
+    data: ListenerStore.ModuleData
+  ) {
     return super.construct(Ctor, {
       emitter: this.emitter,
       event: 'ready',

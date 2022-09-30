@@ -9,6 +9,7 @@
     "rootDir": "src/",
     "outDir": "dist/",
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noImplicitOverride": true
   }
 }
