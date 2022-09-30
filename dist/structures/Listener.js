@@ -22,10 +22,10 @@ class Listener extends Piece_1.Piece {
         console.error(reason);
     }
     register() {
-        this.emitter[this.once ? 'once' : 'on'](this.event, this._run);
+        this.emitter[this.once ? 'once' : 'on'](this.event, this._run.bind(this));
     }
     deregister() {
-        this.emitter.removeListener(this.event, this._run);
+        this.emitter.removeListener(this.event, this._run.bind(this));
     }
 }
 exports.Listener = Listener;
